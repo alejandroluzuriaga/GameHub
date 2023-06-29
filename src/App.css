@@ -1,0 +1,41 @@
+:root{
+  --day: -webkit-linear-gradient(135deg, hsla(216, 89%, 53%, 1) 24%, rgb(33, 78, 202) 99%, hsla(0, 0%, 87%, 1) 100%);
+  --night: linear-gradient(-45deg, rgba(0, 0, 51, 1) 0%, rgba(0, 25, 51, 1) 23%, rgb(0, 21, 42) 48%, rgb(0, 31, 51) 76%, rgb(0, 42, 68) 100%);
+}
+
+#root{
+  width: 100%;
+  height: 100%;
+}
+
+*{
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+body{
+  padding: 0;
+  margin: 0 auto;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  overflow-x: hidden;
+  --webkit-font-smoothing: antialiased;
+  --moz-osx-font-smoothing: grayscale;
+  background-size: cover;
+}
+
+
+.layout{
+  display: flex;
+  flex-direction: column;
+  background-color: #111111;
+  margin: 0 auto;
+  height: 100%;
+}
+
+.home, .hangman, .not_found, .sudoku, .tictactoe{
+  display: flex;
+  flex-direction: column;
+  color: white;
+  padding-top: 10%;
+}
