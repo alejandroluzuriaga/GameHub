@@ -1,5 +1,5 @@
 import GameCard from "../components/GameCard/GameCard";
-import { games } from "../games/games"
+import { games } from "../data/games"
 import { NavLink } from 'react-router-dom';
 import '../components/Pages CSS/home.css'
 import '../components/GameCard/gamecard.css'

@@ -2,16 +2,10 @@
 import './navbar.css'
 import { NavLink } from 'react-router-dom'
 
-const NavBar = () => {
+const NavBarLogin = () => {
 
   return (
     <header className="header-container">
-      <NavLink 
-        className='login header-element'
-        to={'/login'}
-        >
-          Log Out
-      </NavLink>
       <NavLink 
           to={'/home'}
         >
@@ -28,4 +22,4 @@ const NavBar = () => {
   )
 }
 
-export default NavBar
+export default NavBarLogin
