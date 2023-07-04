@@ -1,20 +1,21 @@
+
 export const games = [
     {
         name: 'Hangman',
         link: 'hangman',
-        text: 'Guess the word and test your wit!',
-        image: 'hangman.png'
+        image: 'https://res.cloudinary.com/djgkryxou/image/upload/v1688425068/GameHub/hangman_hdpk0z.png'
+        // image: '/'
     },
     {
         name: 'TicTacToe',
         link: 'tictactoe',
-        text: 'Classic tic-tac-toe for endless fun!',
-        image: 'tic-tac-toe.png'
-      },
+        image: 'https://res.cloudinary.com/djgkryxou/image/upload/v1688425992/GameHub/TICTACTOE_ncgjzo.png'
+        // image: '/'
+    },
     {
       name: 'Sudoku',
       link: 'sudoku',
-      text: `Challenge your brain with number puzzles!`,
-      image: 'sudoku.png'
+      image: 'https://res.cloudinary.com/djgkryxou/image/upload/v1688426376/GameHub/sudoku_atpzuo.png'
+      // image: '/'
     }
   ];

@@ -1,6 +1,8 @@
 import GameCard from "../components/GameCard/GameCard";
 import { games } from "../games/games"
 import { NavLink } from 'react-router-dom';
+import '../components/Pages CSS/home.css'
+import '../components/GameCard/gamecard.css'
 // eslint-disable-next-line react/prop-types
 const Home = ({ name }) => {
 
@@ -18,9 +20,10 @@ const Home = ({ name }) => {
           {games.map((game) => (
             <li className="card-container" key={game.name}>
               <NavLink 
+                className='clickable-card'
                 to={'/' + game.link}
               >
-                <GameCard></GameCard>
+                <GameCard name ={game.name} image={game.image}></GameCard>
               </NavLink>
             </li>
           ))}

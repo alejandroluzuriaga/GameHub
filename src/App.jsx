@@ -7,6 +7,7 @@ import TicTacToe from '../src/pages/TicTacToe'
 import Hangman from '../src/pages/Hangman'
 import Sudoku from '../src/pages/Sudoku'
 import NotFound from '../src/pages/NotFound'
+import Footer from './components/Footer/Footer'
 
 function App() {
   return (
@@ -15,13 +16,14 @@ function App() {
         <NavBar/>
       <main className='layout'>
         <Routes>
-            <Route path="/home" element={<Home name='Test'/>} index/>
+            <Route path="/home" element={<Home name='Gamer'/>} index/>
             <Route path="/tictactoe" element={<TicTacToe />} />
             <Route path="/hangman" element={<Hangman />} />
             <Route path="/sudoku" element={<Sudoku />} />
             <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
+      <Footer/>
     </div>
   );
 }

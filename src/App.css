@@ -33,7 +33,7 @@ body{
   background-color:rgba(18, 27, 195, 0.152);
   margin: 0 auto;
   height: 100%;
-  padding: 0 4rem;
+  padding: 0 3rem;
 }
 
 .home, .hangman, .not_found, .sudoku, .tictactoe{
@@ -42,36 +42,4 @@ body{
   width: 100%;
   padding-top: 10%;
   z-index: 2;
-}
-
-.home{
-  padding-top: 15%;
-  gap: 5rem;
-}
-
-.side{
-  width: 50%
-}
-
-.home-left-side h1{
-  font-size: 6rem;
-  margin: 1rem 0 0 0;
-  display: flex;
-}
-
-.home-left-side p{
-  margin: 0 0 0 1rem;
-  font-size: 8rem;
-  font-family: 'Caprasimo', cursive;
-  font-family: 'Caveat', cursive;
-}
-
-.home-left-side-elements{
-  display: flex;
-  align-items: center;
-}
-
-.home-left-side h2{
-  font-size: 2rem;
-  margin-top: 0;
 }

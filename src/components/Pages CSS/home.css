@@ -1,0 +1,53 @@
+
+.home{
+    padding-top: 8%;
+    gap: 1rem;
+  }
+  
+.home:first-child{
+  align-items: center;
+}
+  .side{
+    width: 50%
+  }
+  
+  .home-left-side h1{
+    font-size: 6rem;
+    margin: 1rem 0 0 0;
+    display: flex;
+  }
+  
+  .home-left-side p{
+    margin: 0 0 0 1rem;
+    font-size: 8rem;
+    font-family: 'Caprasimo', cursive;
+    font-family: 'Caveat', cursive;
+  }
+  
+  .home-left-side-elements{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  
+  .home-left-side h2{
+    font-size: 2rem;
+    margin-top: 0;
+  }
+
+  .home-right-side li{
+    list-style: none;
+    min-width: 250px;
+    max-width: 100%;
+    mix-blend-mode:hard-light;
+    z-index: 2;
+  }
+
+  .game-cards-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    height: fit-content;
+    gap: 2rem;
+}
