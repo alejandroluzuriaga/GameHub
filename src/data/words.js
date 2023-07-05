@@ -1,19 +1,19 @@
 export const words = [
-    'Gato',
-    'Casa',
-    'Perro',
-    'Playa',
-    'Sol',
-    'Arbol',
-    'Coche',
-    'Pizza',
-    'Lápiz',
-    'Avión',
-    'Flores',
-    'Cerveza',
-    'Libro',
-    'Pasta',
-    'Chocolate'
+    'cat',
+    'house',
+    'dog',
+    'beach',
+    'sun',
+    'tree',
+    'car',
+    'pizza',
+    'pencil',
+    'plane',
+    'flowers',
+    'beer',
+    'book',
+    'pasta',
+    'chocolate'
 ]
 
 export default words;

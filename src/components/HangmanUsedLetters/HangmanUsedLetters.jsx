@@ -1,9 +1,17 @@
 /* eslint-disable react/prop-types */
 const HangmanUsedLetters = ({ usedLetters }) => {
     return (
-      <div>
-        {usedLetters?.split('').map((letter, index) => (
-          <p key={index} className="used-letters">{letter}</p>
+      <div className="usedletters-container">
+        {usedLetters.map((letter, index) => (
+          <p 
+            key={index} 
+            className="used-letters"
+            style={{
+              textDecoration: 'line-through'
+            }}
+            >
+              {letter}
+          </p>
         ))}
       </div>
     );

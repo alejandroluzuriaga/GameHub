@@ -1,0 +1,118 @@
+.layout{
+    height: 100vh;
+    padding: 5% 3rem 5% 3rem;
+}
+
+.tictactoe-container{
+    height: 100%;
+    z-index: 1;
+    display: flex;
+}
+
+.tictactoe{
+    width: 100%;
+    padding-top: 0;
+    justify-content: center; 
+    align-items: flex-start;
+}
+
+.tictactoe-board{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.title-and-button{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    align-items: center;
+    width: 80%;
+}
+
+.title{
+    font-size: 4rem;
+    margin: 0 0 0 0;
+}
+
+.reset-button{
+    font-size: 1.6rem;
+    font-weight: bold;
+    cursor: pointer;
+    width: 10%;
+    height: 40px;
+    border: 2px solid rgba(34, 50, 170, 0.339);
+    color: rgb(255, 0, 0);
+    text-transform: uppercase;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #ffffff0e;
+    border-radius: 15%;
+}
+
+.start-button{
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    width: 10%;
+    height: 40px;
+    border: 2px solid rgba(34, 50, 170, 0.339);
+    color: rgb(67, 255, 4);
+    text-transform: uppercase;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #ffffff0e;
+    border-radius: 15%;
+}
+
+.start-button:hover{
+    background-color: #ffffff11;
+}
+
+.tictactoe-board p{
+    font-size: 2rem;
+    font-family: monospace;
+}
+
+.board {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 400px;
+    border-radius: 15%;
+}
+  
+.row0, .row1, .row2 {
+    display: flex;
+    flex-basis: 100%;
+}
+  
+.cell {
+    flex-basis: 33.33%;
+    box-sizing: border-box;
+    width: 7rem;
+    height: 7rem;
+    background-color: transparent;
+    border: none;
+    font-size: 40px;
+}
+
+.active{
+    cursor: pointer;
+}
+
+.row0 .cell:first-child,
+.row0 .cell:nth-child(2),
+.row1 .cell:first-child,
+.row1 .cell:nth-child(2),
+.row2 .cell:first-child,
+.row2 .cell:nth-child(2) {
+  border-right: 10px solid rgba(255, 254, 254, 0.773);
+}
+
+.row0{
+    border-bottom: 10px solid rgba(255, 254, 254, 0.773);
+}
+
+.row1{
+    border-bottom: 10px solid rgba(255, 254, 254, 0.773);
+}

@@ -64,7 +64,7 @@
 .login-page-container{
     display: flex;
     justify-content: center;
-    padding-top: 10%;
+    padding: 0;
     z-index: 1;
 }
 
