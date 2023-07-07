@@ -6,6 +6,7 @@ import '../components/Pages CSS/hangman.css'
 import HangmanUsedLetters from '../components/HangmanUsedLetters/HangmanUsedLetters';
 import { useState, useEffect } from 'react';
 import '../components/Pages CSS/tictactoe.css'
+
 const Hangman = () => {
 
   const letters = 'QWERTYUIOPASDFGHJKLZXCVBNM'
@@ -24,17 +25,12 @@ const Hangman = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [tries])
 
-  const handleWin = () =>{
-    setWin(!win)
-    setResult('won')
-  }
-
   const handleButtonClicked = (event) =>{
     const buttonClicked = event.target.textContent
     const letter = buttonClicked.toLowerCase()
     const word = randomWord.split('')
 
-    if (!usedLetters.includes(letter)  && tries > 0){
+    if (!usedLetters.includes(letter)  && tries > 0 && !win){
       setUsedLetters([...usedLetters, letter])
       setTries(tries - 1)
     }
@@ -43,29 +39,38 @@ const Hangman = () => {
     }
   }
 
-  const checkGameOver = () =>{
-    if (tries == 0 || win){
+  const checkGameOver = () => {
+    if (tries === 0 || win) {
       setGameOver(!gameOver)
+      setResult('lost')
       setVisibleWord(randomWord)
     }
   }
+
   const handleStart = () =>{
+    setResult(null)
     setStart(!start)
+    setTries(10)
     setTries(10)
   }
 
+  const handleWin = () => {
+    setWin(!win)
+    setResult('won')
+    setVisibleWord(randomWord)
+  };
+
   const resetGame = () =>{
+      setResult(null)
       setStart(false)
-      setTries(10)
+      setWin(!win)
       setStart(false)
       setUsedLetters([])
       setGameOver(true);
-      setGameOver(false)
       setVisibleWord(null)
       setRandomWord(words[Math.floor(Math.random() * 15)])
-      setWin(!win)
   }
-//El problema que hay es que si se introduce la palabra en un orden diferente, no la reconoce. Hay q mirar hangmanSpaces y corregirlo
+
   return (
     <div className="hangman">
       <div className="title-and-button">
@@ -81,7 +86,7 @@ const Hangman = () => {
         }
       </div>
       { start ?
-        <p>{`${tries} tries left ${randomWord}`}</p>
+        <p>{`${tries} tries left`}</p>
         : null
       }
       {
@@ -91,12 +96,12 @@ const Hangman = () => {
         null
       }
       {
-        visibleWord ? 
+        visibleWord && (result == 'won' || result == 'lost')  ? (
           <div className='result-message'>
             <p>You {result}</p>
             <p>WORD: {randomWord}</p>
-          </div> 
-      : null
+          </div>
+        ) : null
       }
       {
         !visibleWord ? 

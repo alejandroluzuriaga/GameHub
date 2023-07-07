@@ -20,7 +20,6 @@ const HangmanSpaces = ({ word, usedLetters, handleWin }) => {
     if (!isWordComplete && wordArray.every((letter, index) => letter === updatedSpacesArray[index])) {
       setIsWordComplete(true);
       handleWin();
-      console.log(updatedSpacesArray, wordArray);
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [usedLetters, word, handleWin, isWordComplete]);
