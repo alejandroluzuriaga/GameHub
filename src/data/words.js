@@ -7,13 +7,13 @@ export const words = [
     'tree',
     'car',
     'pizza',
-    'pencil',
+    'key',
     'plane',
-    'flowers',
+    'car',
     'beer',
     'book',
     'pasta',
-    'chocolate'
+    'apple'
 ]
 
 export default words;

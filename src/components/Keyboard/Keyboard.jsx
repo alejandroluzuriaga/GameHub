@@ -2,7 +2,7 @@
 import PropTypes from 'prop-types';
 import './keyboard.css'
 
-const Keyboard = ({ letters, handleButtonClicked, start}) => {
+const Keyboard = ({ letters, handleButtonClicked, start, visibleWord}) => {
   return (
     <div className='hangman-keyboard'>
       {letters.split('').map((letter, index) =>
@@ -12,7 +12,7 @@ const Keyboard = ({ letters, handleButtonClicked, start}) => {
             <button 
               onClick={handleButtonClicked} 
               key={index}
-              disabled={!start}
+              disabled={!start  && visibleWord !== null}
               style={{ 
                 cursor: !start ? 'auto' : 'pointer', 
                 backgroundColor: !start ? 'transparent' : 'rgba(255, 255, 255, 0.859)'}}
@@ -24,7 +24,7 @@ const Keyboard = ({ letters, handleButtonClicked, start}) => {
           <button 
             onClick={handleButtonClicked} 
             key={letter}
-            disabled={!start}
+            disabled={!start && visibleWord !== null}
             style={{ 
               cursor: !start ? 'auto' : 'pointer', 
               backgroundColor: !start ? 'transparent' : 'rgba(255, 255, 255, 0.859)'}}

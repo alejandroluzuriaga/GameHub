@@ -26,6 +26,10 @@
     border-style: solid;
 }
 
+.hangman-keyboard button:hover{
+    background-color: rgba(165, 30, 30, 0.859);
+}
+
 .line-break{
     flex-basis: 100%;
     height: 0;

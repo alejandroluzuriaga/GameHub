@@ -10,6 +10,10 @@
     }
   }
 
+.layout{
+  padding: 4% 3rem 4% 3rem;
+}
+
 .login-form-icon{
   min-width: 30px;
   min-height: 30px;

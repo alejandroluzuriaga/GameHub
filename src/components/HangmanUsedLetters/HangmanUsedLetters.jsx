@@ -6,6 +6,7 @@ const HangmanUsedLetters = ({ usedLetters }) => {
           <p 
             key={index} 
             className="used-letters"
+
             style={{
               textDecoration: 'line-through'
             }}
