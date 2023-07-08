@@ -2,11 +2,14 @@
 .home{
     gap: 1rem;
     padding: 4% 3rem 4% 3rem;
+    display: flex;
+    justify-content: center;
   }
   
 .home:first-child{
   align-items: center;
 }
+
   .side{
     width: 50%
   }

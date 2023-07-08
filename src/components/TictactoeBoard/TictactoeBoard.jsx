@@ -7,7 +7,7 @@ const TictactoeBoard = () => {
         [null, null, null],
         ]);
     const [start, setStart] = useState(false)
-    const [currentPlayer, setCurrentPlayer] = useState('X');
+    const [currentPlayer, setCurrentPlayer] = useState("");
     const [gameOver, setGameOver] = useState(false);
     const [winner, setWinner] = useState(null);
 
@@ -72,7 +72,14 @@ const TictactoeBoard = () => {
 
     useEffect(() => {
         checkGameOver();
-      });
+      }, [board]);
+
+    useEffect(() => {
+        if (start) {
+          const randomPlayer = Math.random() < 0.5 ? "X" : "O";
+          setCurrentPlayer(randomPlayer);
+        }
+      }, [start]);
     
       const handleCellClick = (row, col) => {
         if (board[row][col] === null && !gameOver) {
@@ -90,7 +97,7 @@ const TictactoeBoard = () => {
           [null, null, null],
           [null, null, null],
         ]);
-        setCurrentPlayer('X');
+        setCurrentPlayer("");
         setGameOver(false);
         setWinner(null);
         setStart(false)
@@ -127,7 +134,12 @@ const TictactoeBoard = () => {
                 {row.map((cell, colIndex) => (
                     <button
                     style={{
-                        color: cell === 'O' ? 'yellow' : cell === 'X' ? 'rgb(67, 255, 4)' : 'inherit'
+                        color: cell === 'O' ? 
+                        'yellow' 
+                        : 
+                        cell === 'X' ? 
+                        'rgb(67, 255, 4)' 
+                        : 'inherit'
                     }}
                     key={colIndex}
                     className= {!start ? "cell" : "cell active"}

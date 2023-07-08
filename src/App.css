@@ -24,11 +24,13 @@ body{
 .layout{
   display: flex;
   flex-direction: column;
+  justify-content: center;
   background-color:rgba(18, 27, 195, 0.152);
   margin: 0 auto;
   height: 100%;
   padding: 8% 3rem 8% 3rem;
   z-index: 1;
+  overflow-y: none;
 }
 
 .layout .login{

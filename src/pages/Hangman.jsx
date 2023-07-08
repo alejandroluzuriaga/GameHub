@@ -38,16 +38,12 @@ const Hangman = () => {
       setUsedLetters([...usedLetters, letter]);
       setTries(tries - 1);
     }
-    if (word.includes(letter) && tries > 0) {
-      setTries(tries - 1);
-    }
-
   };
 
   const checkGameOver = () => {
-    if (tries === 0 && !win) {
-      setGameOver(!gameOver);
-      setResult('lost');
+    if (tries === 0 || win) {
+      setGameOver(true);
+      setResult(win ? 'won' : 'lost');
       setVisibleWord(randomWord);
     }
   };
@@ -60,7 +56,7 @@ const Hangman = () => {
   }
 
   const handleWin = () => {
-    setWin(!win)
+    setWin(true)
     setResult('won')
     setVisibleWord(randomWord)
   };
