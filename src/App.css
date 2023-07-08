@@ -31,6 +31,10 @@ body{
   z-index: 1;
 }
 
+.layout .login{
+  padding: 6% 3rem 4% 3rem;
+}
+
 .home, .hangman, .not_found, .sudoku, .tictactoe{
   display: flex;
   color: white;

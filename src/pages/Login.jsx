@@ -1,4 +1,4 @@
-import '../components/Pages CSS/login.css'
+import '../PagesCSS/Login/login.css'
 
 const Login = () => {
     return (
@@ -29,7 +29,7 @@ const Login = () => {
             <label htmlFor="firstname" className="placeholder">User</label>
         </div>
         <div className="input-container ic2">
-            <input id="lastname" className="input" type="text" placeholder=" " />
+            <input id="lastname" className="input" type="password" placeholder=" " />
             <div className="cut"></div>
             <label htmlFor="lastname" className="placeholder">Password</label>
         </div>

@@ -2,10 +2,10 @@
 import words from '../data/words'
 import Keyboard from '../components/Keyboard/Keyboard';
 import HangmanSpaces from '../components/HangmanSpaces/HangmanSpaces';
-import '../components/Pages CSS/hangman.css'
+import '../PagesCSS/Tictactoe/tictactoe.css'
+import '../PagesCSS/Hangman/hangman.css'
 import HangmanUsedLetters from '../components/HangmanUsedLetters/HangmanUsedLetters';
 import { useState, useEffect } from 'react';
-import '../components/Pages CSS/tictactoe.css'
 
 const Hangman = () => {
 
@@ -25,27 +25,32 @@ const Hangman = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [tries])
 
-  const handleButtonClicked = (event) =>{
-    const buttonClicked = event.target.textContent
-    const letter = buttonClicked.toLowerCase()
-    const word = randomWord.split('')
+  const handleButtonClicked = (event) => {
+    if (gameOver || win) {
+      return;
+    }
+  
+    const buttonClicked = event.target.textContent;
+    const letter = buttonClicked.toLowerCase();
+    const word = randomWord.split('');
+  
+    if (!usedLetters.includes(letter) && tries > 0) {
+      setUsedLetters([...usedLetters, letter]);
+      setTries(tries - 1);
+    }
+    if (word.includes(letter) && tries > 0) {
+      setTries(tries - 1);
+    }
 
-    if (!usedLetters.includes(letter)  && tries > 0 && !win){
-      setUsedLetters([...usedLetters, letter])
-      setTries(tries - 1)
-    }
-    if (word.includes(letter) && tries > 0){
-      setTries(tries - 1)
-    }
-  }
+  };
 
   const checkGameOver = () => {
-    if (tries === 0 || win) {
-      setGameOver(!gameOver)
-      setResult('lost')
-      setVisibleWord(randomWord)
+    if (tries === 0 && !win) {
+      setGameOver(!gameOver);
+      setResult('lost');
+      setVisibleWord(randomWord);
     }
-  }
+  };
 
   const handleStart = () =>{
     setResult(null)
@@ -60,16 +65,15 @@ const Hangman = () => {
     setVisibleWord(randomWord)
   };
 
-  const resetGame = () =>{
-      setResult(null)
-      setStart(false)
-      setWin(!win)
-      setStart(false)
-      setUsedLetters([])
-      setGameOver(true);
-      setVisibleWord(null)
-      setRandomWord(words[Math.floor(Math.random() * 15)])
-  }
+  const resetGame = () => {
+    setResult(null);
+    setStart(false);
+    setWin(false);
+    setUsedLetters([]);
+    setGameOver(false);
+    setVisibleWord(null);
+    setRandomWord(words[Math.floor(Math.random() * 15)]);
+  };
 
   return (
     <div className="hangman">
@@ -98,7 +102,7 @@ const Hangman = () => {
       {
         visibleWord && (result == 'won' || result == 'lost')  ? (
           <div className='result-message'>
-            <p>You {result}</p>
+            <p>You {result}!</p>
             <p>WORD: {randomWord}</p>
           </div>
         ) : null

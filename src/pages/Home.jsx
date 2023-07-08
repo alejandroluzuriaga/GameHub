@@ -1,7 +1,7 @@
 import GameCard from "../components/GameCard/GameCard";
 import { games } from "../data/games"
 import { NavLink } from 'react-router-dom';
-import '../components/Pages CSS/home.css'
+import '../PagesCSS/Home/home.css'
 import '../components/GameCard/gamecard.css'
 // eslint-disable-next-line react/prop-types
 const Home = ({ name }) => {

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import '../Pages CSS/tictactoe.css'
+import '../../PagesCSS/Tictactoe/tictactoe.css'
 const TictactoeBoard = () => {
     const [board, setBoard] = useState([
         [null, null, null],

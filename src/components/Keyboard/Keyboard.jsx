@@ -1,44 +1,45 @@
 /* eslint-disable react/prop-types */
 import PropTypes from 'prop-types';
+import React from 'react';
 import './keyboard.css'
 
-const Keyboard = ({ letters, handleButtonClicked, start, visibleWord}) => {
+const Keyboard = ({ letters, handleButtonClicked, start, visibleWord }) => {
   return (
-    <div className='hangman-keyboard'>
-      {letters.split('').map((letter, index) =>
-        letter === 'A' || letter === 'Z' ? (
-          <>
-            <span className='line-break'></span>
-            <button 
-              onClick={handleButtonClicked} 
-              key={index}
-              disabled={!start  && visibleWord !== null}
-              style={{ 
-                cursor: !start ? 'auto' : 'pointer', 
-                backgroundColor: !start ? 'transparent' : 'rgba(255, 255, 255, 0.859)'}}
+    <div className="hangman-keyboard">
+      {letters.split('').map((letter, index) => (
+        <React.Fragment key={`${letter}-${index}`}>
+          {letter === 'A' || letter === 'Z' ? (
+            <React.Fragment>
+              <span className='line-break'></span>
+              <button
+                onClick={handleButtonClicked}
+                disabled={!start && visibleWord !== null}
+                style={{
+                  cursor: !start ? 'auto' : 'pointer',
+                  backgroundColor: !start ? 'transparent' : 'rgba(255, 255, 255, 0.859)',
+                }}
+              >
+                {letter}
+              </button>
+            </React.Fragment>
+          ) : (
+            <button
+              onClick={handleButtonClicked}
+              disabled={!start && visibleWord !== null}
+              style={{
+                cursor: !start ? 'auto' : 'pointer',
+                backgroundColor: !start ? 'transparent' : 'rgba(255, 255, 255, 0.859)',
+              }}
+              key={`${letter}-${index}`}
             >
               {letter}
             </button>
-          </>
-        ) : (
-          <button 
-            onClick={handleButtonClicked} 
-            key={letter}
-            disabled={!start && visibleWord !== null}
-            style={{ 
-              cursor: !start ? 'auto' : 'pointer', 
-              backgroundColor: !start ? 'transparent' : 'rgba(255, 255, 255, 0.859)'}}
-          >
-            {letter}
-          </button>
-        )
-      )}
+          )}
+        </React.Fragment>
+      ))}
     </div>
   );
 };
 
-Keyboard.propTypes = {
-    letters: PropTypes.string.isRequired,
-  };
-
 export default Keyboard
+

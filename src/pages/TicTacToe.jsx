@@ -1,4 +1,4 @@
-import '../components/Pages CSS/tictactoe.css'
+import '../PagesCSS/Tictactoe/tictactoe.css'
 import TictactoeBoard from '../components/TictactoeBoard/TictactoeBoard';
 
 const TicTacToe = () => {
