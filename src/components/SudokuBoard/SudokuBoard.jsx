@@ -1,23 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './SudokuBoard.css';
 
-const SudokuBoard = ({ sudokuBoard, handleButtonChange }) => {
+const SudokuBoard = ({ sudokuBoard, handleInputChange, solved }) => {
+  const [inputValues, setInputValues] = useState(sudokuBoard || []);
+
+  const handleChange = (index, value) => {
+    console.log(value, solved[index])
+    if (value == solved[index]) {
+      const updatedValues = [...inputValues];
+      updatedValues[index] = value;
+      setInputValues(updatedValues);
+      handleInputChange(index, value, updatedValues);
+    }
+  };
+
   return (
     <div className="sudoku-board">
-  {sudokuBoard ? (
-    <div className="sudoku-row">
-      {sudokuBoard.map((cell, index) => (
-        <input className='sudoku-cell'
-          key={index}
-          type="text"
-          value={cell ?? ''}
-          onChange={(e) => handleButtonChange(Math.floor(index / 9), index % 9, e.target.value)}
-        />
-      ))}
-    </div>
-  ) : (
-    <div>Loading Sudoku board...</div>
-  )}
+      {inputValues ? (
+        <div className="sudoku-row">
+          {inputValues.map((cell, index) => (
+            <input
+              className="sudoku-cell"
+              key={index}
+              type="text"
+              min={1}
+              max={9}
+              value={cell ?? ''}
+              onChange={(e) => handleChange(index, e.target.value)}
+            />
+          ))}
+        </div>
+      ) : (
+        <div>Loading Sudoku board...</div>
+      )}
     </div>
   );
 };

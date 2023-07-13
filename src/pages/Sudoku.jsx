@@ -1,34 +1,43 @@
-import {React, useState, useEffect} from "react"
-import '../PagesCSS/Sudoku/sudoku.css'
-import SudokuBoard from "../components/SudokuBoard/SudokuBoard"
-import sudoku from "sudoku"
+import React, { useState } from "react";
+import '../PagesCSS/Sudoku/sudoku.css';
+import SudokuBoard from "../components/SudokuBoard/SudokuBoard";
+import sudoku from "sudoku";
 
 const Sudoku = () => {
   const [start, setStart] = useState(false);
   const [sudokuBoard, setSudokuBoard] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [actualBoard, setActualBoard] = useState(null)
+  const [solvedSudoku, setSolvedSudoku] = useState(null)
+  const [isSolved, setIsSolved] = useState(false)
 
-  useEffect(() => {
-    try {
-      const newBoard = sudoku.makepuzzle();
-      setSudokuBoard(newBoard);
-      setLoading(false);
-    } catch (error) {
-      console.error('Error generating Sudoku board:', error);
-      setLoading(false);
-    }
-  }, []);
-
+  const isSudokuSolved = (sudokuActual, solvedSudoku) => {
+    console.log(sudokuActual, solvedSudoku)
+    return sudokuActual.every((value, index) => value === solvedSudoku[index]);
+  };
   const handleStart = () => {
     setStart(!start);
+    const newBoard = sudoku.makepuzzle()
+    const solvedBoard = sudoku.solvepuzzle(newBoard)
+    setSudokuBoard(newBoard)
+    setActualBoard(newBoard)
+    setSolvedSudoku(solvedBoard)
   };
 
   const resetGame = () => {
     setStart(!start);
+    setIsSolved(!isSolved)
+    setSudokuBoard(null)
   };
 
-  const handleButtonChange = (rowIndex, colIndex, value) => {
-    console.log(rowIndex, colIndex, value);
+  const handleInputChange = (updatedValues) => {
+    // setActualBoard(solvedSudoku)
+    // isSudokuSolved(actualBoard, solvedSudoku)
+    // setIsSolved(!isSolved)
+    // resetGame()
+      setActualBoard(updatedValues)
+      if (isSudokuSolved(actualBoard, solvedSudoku)){
+        setIsSolved(!isSolved)
+      } 
   };
 
   return (
@@ -45,10 +54,10 @@ const Sudoku = () => {
           </button>
         )}
       </div>
-      {loading ? (
-        <div>Loading...</div>
+      {start ? (
+        <SudokuBoard sudokuBoard={sudokuBoard} handleInputChange={handleInputChange} solved={solvedSudoku} />
       ) : (
-        <SudokuBoard sudokuBoard={sudokuBoard} handleButtonChange={handleButtonChange} />
+        <div>Press 'Start' to play</div>
       )}
     </div>
   );
