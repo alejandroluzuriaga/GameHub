@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-import PropTypes from 'prop-types';
 import React from 'react';
 import './keyboard.css'
 
@@ -25,7 +24,7 @@ const Keyboard = ({ letters, handleButtonClicked, start, visibleWord }) => {
           ) : (
             <button
               onClick={handleButtonClicked}
-              disabled={!start && visibleWord !== null}
+              disabled={!start && visibleWord == null}
               style={{
                 cursor: !start ? 'auto' : 'pointer',
                 backgroundColor: !start ? 'transparent' : 'rgba(255, 255, 255, 0.859)',

@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './SudokuBoard.css';
+import SudokuCell from '../SudokuCell/SudokuCell';
 
+// eslint-disable-next-line react/prop-types
 const SudokuBoard = ({ sudokuBoard, handleInputChange, solved }) => {
   const [inputValues, setInputValues] = useState(sudokuBoard || []);
 
@@ -10,7 +12,7 @@ const SudokuBoard = ({ sudokuBoard, handleInputChange, solved }) => {
       const updatedValues = [...inputValues];
       updatedValues[index] = value;
       setInputValues(updatedValues);
-      handleInputChange(index, value, updatedValues);
+      handleInputChange(updatedValues);
     }
   };
 
@@ -19,15 +21,18 @@ const SudokuBoard = ({ sudokuBoard, handleInputChange, solved }) => {
       {inputValues ? (
         <div className="sudoku-row">
           {inputValues.map((cell, index) => (
-            <input
-              className="sudoku-cell"
-              key={index}
-              type="text"
-              min={1}
-              max={9}
-              value={cell ?? ''}
-              onChange={(e) => handleChange(index, e.target.value)}
-            />
+            <SudokuCell key={index} value={cell ?? ''} handleChange={handleChange} solved={solved} index={index} />
+            // <input
+            //   disabled={!solved}
+            //   className="sudoku-cell"
+            //   key={index}
+            //   type="text"
+            //   inputMode="numeric"
+            //   min={1}
+            //   max={9}
+            //   value={cell ?? ''}
+            //   onChange={(e) => handleChange(index, parseInt(e.target.value, 10))}
+            // />
           ))}
         </div>
       ) : (

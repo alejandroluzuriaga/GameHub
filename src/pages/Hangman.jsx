@@ -32,7 +32,7 @@ const Hangman = () => {
   
     const buttonClicked = event.target.textContent;
     const letter = buttonClicked.toLowerCase();
-    const word = randomWord.split('');
+    // const word = randomWord.split('');
   
     if (!usedLetters.includes(letter) && tries > 0) {
       setUsedLetters([...usedLetters, letter]);

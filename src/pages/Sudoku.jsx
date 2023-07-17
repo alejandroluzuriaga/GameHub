@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import '../PagesCSS/Sudoku/sudoku.css';
 import SudokuBoard from "../components/SudokuBoard/SudokuBoard";
 import sudoku from "sudoku";
@@ -12,8 +12,9 @@ const Sudoku = () => {
 
   const isSudokuSolved = (sudokuActual, solvedSudoku) => {
     console.log(sudokuActual, solvedSudoku)
-    return sudokuActual.every((value, index) => value === solvedSudoku[index]);
-  };
+    return sudokuActual.every((value, index) => value == solvedSudoku[index])
+  }
+
   const handleStart = () => {
     setStart(!start);
     const newBoard = sudoku.makepuzzle()
@@ -25,19 +26,16 @@ const Sudoku = () => {
 
   const resetGame = () => {
     setStart(!start);
-    setIsSolved(!isSolved)
+    setIsSolved(false)
     setSudokuBoard(null)
   };
 
   const handleInputChange = (updatedValues) => {
-    // setActualBoard(solvedSudoku)
-    // isSudokuSolved(actualBoard, solvedSudoku)
-    // setIsSolved(!isSolved)
-    // resetGame()
-      setActualBoard(updatedValues)
-      if (isSudokuSolved(actualBoard, solvedSudoku)){
-        setIsSolved(!isSolved)
-      } 
+    setActualBoard(updatedValues);
+    if (isSudokuSolved(updatedValues, solvedSudoku)) {
+      console.log('is solved')
+      setIsSolved(true);
+    }
   };
 
   return (
@@ -54,9 +52,15 @@ const Sudoku = () => {
           </button>
         )}
       </div>
+      {isSolved ? 
+      <div className="win-message">
+        <h3>Well done! You solved it</h3>
+      </div> : null
+      }
       {start ? (
         <SudokuBoard sudokuBoard={sudokuBoard} handleInputChange={handleInputChange} solved={solvedSudoku} />
       ) : (
+        // eslint-disable-next-line react/no-unescaped-entities
         <div>Press 'Start' to play</div>
       )}
     </div>
