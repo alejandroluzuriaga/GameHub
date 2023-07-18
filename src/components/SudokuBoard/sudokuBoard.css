@@ -20,11 +20,11 @@
   }
 
   .not-changed{
-    color: rgb(255, 0, 0);
+    color: rgb(0, 0, 0);
   }
 
   .changed{
-    color: rgb(24, 24, 24);
+    color: rgb(252, 252, 253);
   }
   
   .sudoku-row .sudoku-cell:first-child {
@@ -44,7 +44,7 @@
   }
   
   .sudoku-row :nth-child(3n) {
-    border-right: 3px solid black;
+    border-right: 3px solid rgba(0, 0, 0, 0.483);
   }
 
   .sudoku-row :nth-child(9n) {
@@ -52,9 +52,9 @@
   }
 
 .sudoku-row .sudoku-cell:nth-child(n+19):nth-child(-n+27) {
-    border-bottom: 3px solid black;
+    border-bottom: 3px solid rgba(0, 0, 0, 0.483);
 }
 
 .sudoku-row .sudoku-cell:nth-child(n+46):nth-child(-n+54) {
-    border-bottom: 3px solid black;
+    border-bottom: 3px solid rgba(0, 0, 0, 0.483);
 }
