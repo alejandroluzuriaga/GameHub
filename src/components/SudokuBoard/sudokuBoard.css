@@ -19,15 +19,14 @@
     text-decoration: none;
   }
 
-  .incorrect {
-    background-color: rgba(237, 125, 125, 0.835);
-    transition: background-color 0.1s ease, opacity 0.1s ease;
-  }
-  
-  .incorrect.show {
-    opacity: 1;
+  .not-changed{
+    color: rgb(255, 0, 0);
   }
 
+  .changed{
+    color: rgb(24, 24, 24);
+  }
+  
   .sudoku-row .sudoku-cell:first-child {
     border-radius: 8px 0 0 0;
   }

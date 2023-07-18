@@ -3,36 +3,27 @@ import './SudokuBoard.css';
 import SudokuCell from '../SudokuCell/SudokuCell';
 
 // eslint-disable-next-line react/prop-types
-const SudokuBoard = ({ sudokuBoard, handleInputChange, solved }) => {
+const SudokuBoard = ({ sudokuBoard, handleInputChange, solved, isSolved }) => {
   const [inputValues, setInputValues] = useState(sudokuBoard || []);
 
   const handleChange = (index, value) => {
-    console.log(value, solved[index])
-    if (value == solved[index]) {
-      const updatedValues = [...inputValues];
-      updatedValues[index] = value;
-      setInputValues(updatedValues);
-      handleInputChange(updatedValues);
-    }
+    // console.log(value, solved[index])
+    const updatedValues = [...inputValues];
+    updatedValues[index] = value;
+    setInputValues(updatedValues);
+    handleInputChange(updatedValues);
   };
 
   return (
     <div className="sudoku-board">
       {inputValues ? (
         <div className="sudoku-row">
-          {inputValues.map((cell, index) => (
-            <SudokuCell key={index} value={cell ?? ''} handleChange={handleChange} solved={solved} index={index} />
-            // <input
-            //   disabled={!solved}
-            //   className="sudoku-cell"
-            //   key={index}
-            //   type="text"
-            //   inputMode="numeric"
-            //   min={1}
-            //   max={9}
-            //   value={cell ?? ''}
-            //   onChange={(e) => handleChange(index, parseInt(e.target.value, 10))}
-            // />
+          {!isSolved 
+          ? inputValues.map((cell, index) => (
+            <SudokuCell key={index} value={cell ?? ''} handleChange={handleChange} index={index} />
+          ))
+          : solved.map((cell, index) => (
+            <SudokuCell key={index} value={cell ?? ''} handleChange={handleChange} index={index} />
           ))}
         </div>
       ) : (

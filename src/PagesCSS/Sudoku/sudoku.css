@@ -3,11 +3,22 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  gap: 3rem;
+  gap: 1.5rem;
   margin-bottom: rem;
   padding-top: 0%;
 }
 
 .win-message h3{
+  margin: 0;
+}
+
+.solve-check-buttons{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.check-error-message{
   margin: 0;
 }
