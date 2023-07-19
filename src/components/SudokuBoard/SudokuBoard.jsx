@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './SudokuBoard.css';
+import './sudokuBoard.css';
 import SudokuCell from '../SudokuCell/SudokuCell';
 
 // eslint-disable-next-line react/prop-types
