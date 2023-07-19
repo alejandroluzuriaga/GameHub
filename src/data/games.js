@@ -3,7 +3,7 @@ export const games = [
     {
         name: 'Hangman',
         link: 'hangman',
-        image: 'https://res.cloudinary.com/djgkryxou/image/upload/v1688425068/GameHub/hangman_hdpk0z.png'
+        image: 'https://res.cloudinary.com/djgkryxou/image/upload/v1689765524/GameHub/hangman_zri908.png'
     },
     {
         name: 'TicTacToe',
@@ -13,6 +13,6 @@ export const games = [
     {
       name: 'Sudoku',
       link: 'sudoku',
-      image: 'https://res.cloudinary.com/djgkryxou/image/upload/v1688426376/GameHub/sudoku_atpzuo.png'
+      image: 'https://res.cloudinary.com/djgkryxou/image/upload/v1689764999/sudoku_szqfzi.png'
     }
   ];

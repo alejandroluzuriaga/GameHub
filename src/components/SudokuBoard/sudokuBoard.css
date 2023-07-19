@@ -58,3 +58,19 @@
 .sudoku-row .sudoku-cell:nth-child(n+46):nth-child(-n+54) {
     border-bottom: 3px solid rgba(0, 0, 0, 0.483); 
 }
+
+
+@media only screen and (max-width: 450px) {
+  .sudoku-row {
+    display: grid;
+    grid-template-columns: repeat(9, 2rem);
+    grid-template-rows: repeat(9, 1.9rem);
+    justify-items: center;
+    align-items: center;
+  }
+  
+  .sudoku-cell {
+    font-size: 18px;
+  }
+
+}

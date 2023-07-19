@@ -1,9 +1,10 @@
-
 .header-container{
     position: fixed;
     width: 100%;
     display: flex;
     justify-content: flex-end;
+    background-color: #383d9c;
+    opacity: 0.9;
     padding: 1rem 2rem 0 0;
     gap: 3rem;
     z-index: 3;
@@ -30,4 +31,11 @@
 
 svg:hover{
   stroke: rgb(246, 255, 0);
+}
+
+@media only screen and (max-width: 687px) {
+  .header-container{
+    gap: 1rem;
+    padding: 1rem 1rem 0 0;
+  }
 }

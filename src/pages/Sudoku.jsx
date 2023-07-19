@@ -59,7 +59,7 @@ const Sudoku = () => {
   return (
     <div className="sudoku">
       <div className="title-and-button">
-        <h2 className="title">Sudoku</h2>
+        <h2 className="title-sudoku">Sudoku</h2>
         {!start ? (
           <button className="start-button" onClick={handleStart}>
             Start

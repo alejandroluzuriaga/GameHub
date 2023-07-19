@@ -9,10 +9,9 @@ import Hangman from '../src/pages/Hangman'
 import Sudoku from '../src/pages/Sudoku'
 import NotFound from '../src/pages/NotFound'
 import Footer from './components/Footer/Footer'
-import {AuthProvider } from './context/AuthContext'
+import { AuthProvider } from './context/AuthContext'
 import RequireAuth from './components/RequireAuth'
 import RegisteredAuth from './components/RegisteredAuth'
-// import NavBarLogin from './components/NavBar/NavBarLogin'
 
 function App() {
   return (

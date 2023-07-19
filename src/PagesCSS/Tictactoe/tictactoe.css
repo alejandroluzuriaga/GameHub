@@ -41,7 +41,7 @@
     font-size: 1.6rem;
     font-weight: bold;
     cursor: pointer;
-    width: 10%;
+    width: fit-content;
     height: 40px;
     border: 2px solid rgba(34, 50, 170, 0.339);
     color: rgb(255, 0, 0);
@@ -55,7 +55,7 @@
     font-size: 1.5rem;
     font-weight: bold;
     cursor: pointer;
-    width: 10%;
+    width: fit-content;
     height: 40px;
     border: 2px solid rgba(34, 50, 170, 0.339);
     color: rgb(67, 255, 4);
@@ -116,4 +116,88 @@
 
 .row1{
     border-bottom: 10px solid rgba(255, 254, 254, 0.773);
+}
+
+@media only screen and (max-width: 687px) {
+    .tictactoe{
+        padding-top: 3rem;
+    }
+
+    .layout{
+      height: 100%;
+      padding-top: 15%;
+      align-self: center;
+      gap: 4rem;
+    }
+    
+    .title{
+        font-size: 1.5rem;
+        margin: 0 0 0 0;
+    }
+
+    .tictactoe-board{
+        gap: 2rem;
+    }
+    .tictactoe-board p{
+        font-size: 0.8rem;
+    }
+
+    .board {
+        max-width: 300px;
+        height: 200px;
+        gap: 0;
+    }
+
+    .row{
+        margin: 0;
+        padding: 0;
+    }
+
+    .cell {
+        width: 3rem;
+        height: 4rem;
+        font-size: 20px;
+    }
+    
+    .reset-button{
+        font-size: 1.2rem;
+    }
+    
+    .start-button{
+        font-size:  1.2rem;
+    }
+
+    .title-and-button{
+        gap: 1rem;
+    }
+}
+
+
+@media only screen and (min-width: 688px) and (max-width: 1337px) {
+    
+    .title{
+        font-size: 3rem;
+        margin: 0 0 0 0;
+    }
+
+    .tictactoe-board p{
+        font-size: 1.3rem;
+    }
+
+    .board {
+        max-width: 300px;
+        height: 200px;
+        gap: 0;
+    }
+
+    .row{
+        margin: 0;
+        padding: 0;
+    }
+
+    .cell {
+        width: 4.5rem;
+        height: 5rem;
+        font-size: 20px;
+    }
 }

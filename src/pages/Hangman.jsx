@@ -74,7 +74,7 @@ const Hangman = () => {
   return (
     <div className="hangman">
       <div className="title-and-button">
-        <h2 className="title">Hangman</h2>
+        <h2 className="title-hangman">Hangman</h2>
         {!start ? 
           <button 
               className="start-button"

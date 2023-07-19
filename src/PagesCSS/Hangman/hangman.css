@@ -22,6 +22,11 @@
     font-size: 22px;
 }
 
+.title-hangman{
+    font-size: 4rem;
+    margin: 0 0 0 0;
+}
+
 .hangman-spaces{
     display: flex;
     height: 30%;
@@ -35,6 +40,27 @@
     align-self: center;
     font-size: 60px;
     margin: 0;
+}
+
+@media only screen and (max-width: 687px) {
+    .hangman{
+        padding-top: 15%;
+    }
+
+    .hangman p{
+        font-size: 1.2rem;
+    }
+    .title-hangman{
+        font-size: 2rem;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .hangman-spaces{
+        display: flex;
+        height: 30%;
+        gap: 1.5rem;
+    }
 }
 
 

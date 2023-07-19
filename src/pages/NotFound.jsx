@@ -1,5 +1,6 @@
 import '../PagesCSS/NotFound/notfound.css'
 const NotFound = () => {
+  console.log("19/07/2023 :D")
   return (
     <div className="not_found">
       <div className="image-container">

@@ -4,7 +4,10 @@ footer{
     width: 100%;
     display: flex;
     justify-content: center;
-    padding: 1rem;
+    padding: 0.5rem 1rem 0.2rem 1rem;
+    z-index: 3;
+    background-color: #383d9ccf;
+    opacity: 0.85;
 }
 
 footer h3{

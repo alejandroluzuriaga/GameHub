@@ -57,7 +57,7 @@ const Login = () => {
                         </div>
                     </div>
                 </div>
-                <div className="title">Log In</div>
+                <div className="title-login">Log In</div>
                 <div className="input-container ic1">
                     <input 
                         id="firstname" 

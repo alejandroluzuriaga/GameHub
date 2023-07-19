@@ -1,5 +1,5 @@
 .hangman-keyboard{
-    width: 70%;
+    width: 100%;
     display: flex;
     flex-direction: row;
     align-content: center;
@@ -14,6 +14,9 @@
 }
 
 .hangman-keyboard button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 55px;
     height: 55px;
     border-radius: 5px;
@@ -39,3 +42,54 @@
     content: "\A";
     white-space: pre;
   }
+  
+    @media only screen and (min-width: 800px) and (max-width: 1000px) {
+        .hangman-keyboard button{
+            width: 40px;
+            height: 40px;
+            border-radius: 5px;
+            font-size: 17px;
+        }
+    }
+
+    @media only screen and (min-width: 450px) and (max-width: 799px) {
+        .hangman-keyboard{
+            gap: 0.3rem;
+        }
+
+        .hangman-keyboard button{
+            width: 32px;
+            height: 32px;
+            border-radius: 5px;
+            font-size: 15px;
+        }
+    }
+    
+    @media only screen and (max-width: 687px) {
+        .hangman-keyboard{
+            gap: 0.2rem;
+        }
+
+        .hangman-keyboard button{
+            width: 20px;
+            height: 20px;
+            border-radius: 3px;
+            font-size: 10px;
+        }
+    }
+
+    @media only screen and (max-width: 320px) {
+        .hangman-keyboard{
+            gap: 0.2rem;
+        }
+
+        .hangman-keyboard button{
+            width: 17px;
+            height: 19px;
+            border-radius: 3px;
+            font-size: 10px;
+        }
+    }
+
+
+
