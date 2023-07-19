@@ -1,0 +1,23 @@
+.not_found{
+    padding: 0px;    
+}
+
+.image-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-container img{
+    width: 200px;
+    height: 200px;
+}
+
+.not-found-message{
+    margin-left: 2%;
+}
+
+.not-found-message p{
+    font-size: 1.5rem;
+}

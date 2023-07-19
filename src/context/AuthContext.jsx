@@ -11,12 +11,12 @@ export const AuthProvider = ({children}) =>{
 
     const login = async (data) =>{
         setUser(data);
-        navigate("login", {replace: true})
+        navigate("/home", {replace: true})
     }
 
     const logout = () =>{
         setUser(null)
-        navigate("/", {replace: true})
+        navigate("/login", {replace: true})
     }
 
     const value = useMemo(() => ({

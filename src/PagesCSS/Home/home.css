@@ -31,6 +31,10 @@
     flex-wrap: wrap;
     align-items: center;
   }
+
+  .home-left-side-elements p{
+    color: rgba(246, 255, 0, 0.895);
+  }
   
   .home-left-side h2{
     font-size: 2rem;

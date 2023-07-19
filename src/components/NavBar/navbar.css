@@ -16,6 +16,18 @@
 
 .login{
   text-decoration: none;
+}
+
+.login p{
   color: white;
   font-size: 1rem;
+  font-weight: bold
+}
+
+.login p:hover{
+  color: rgb(246, 255, 0);
+}
+
+svg:hover{
+  stroke: rgb(246, 255, 0);
 }

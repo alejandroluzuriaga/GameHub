@@ -1,17 +1,26 @@
 
 import './navbar.css'
 import { NavLink } from 'react-router-dom'
+import { AuthContext } from "../../context/AuthContext"
+import { useContext } from 'react'
 
 const NavBar = () => {
-
+  const { user, logout } = useContext(AuthContext)
   return (
     <header className="header-container">
-      <NavLink 
+      {user?.username == 'Test'
+      ? 
+      <>
+        <NavLink 
         className='login header-element'
         to={'/login'}
+        onClick={logout}
         >
+          <p>
           Log Out
-      </NavLink>
+          </p>
+      </NavLink> 
+
       <NavLink 
           to={'/home'}
         >
@@ -24,6 +33,8 @@ const NavBar = () => {
           <path d="M14 10h2" />
         </svg>
       </NavLink>
+      </>
+      : null}
     </header>
   )
 }

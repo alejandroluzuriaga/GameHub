@@ -179,7 +179,6 @@ body {
     cursor: pointer;
     font-size: 18px;
     height: 50px;
-    margin-top: 38px;
     outline: 0;
     text-align: center;
     width: 100%;
@@ -188,4 +187,22 @@ body {
   
   .submit:hover {
     background-color: #2e3789b1
+  }
+
+  .error-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+
+  .error-message:first-child{
+    margin-top: 5%;
+  }
+
+  .error-message{
+    font-size: 15px;
+    color: white;
+    margin: 0;
   }
